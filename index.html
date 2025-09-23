@@ -1,61 +1,853 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Md Jahirul Islam – Portfolio</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD Jahirul Islam - Lead Software Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-green: #e8f5e9;
+            --dark-green: #2e7d32;
+            --accent-green: #4caf50;
+            --black: #212121;
+            --light-gray: #f5f5f5;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--primary-green);
+            color: var(--black);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--black);
+            color: var(--white);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            color: var(--accent-green);
+        }
+        
+        .logo span {
+            color: var(--white);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent-green);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--white) 100%);
+            text-align: center;
+        }
+        
+        .hero-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--black);
+        }
+        
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: var(--dark-green);
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--black);
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .contact-item i {
+            color: var(--dark-green);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--dark-green);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            margin: 5px;
+        }
+        
+        .btn:hover {
+            background-color: var(--accent-green);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--dark-green);
+            color: var(--dark-green);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--dark-green);
+            color: var(--white);
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--dark-green);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background-color: var(--accent-green);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Profile Section */
+        .profile-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .profile-text {
+            flex: 1;
+        }
+        
+        .profile-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .profile-image {
+            flex: 0 0 300px;
+            text-align: center;
+        }
+        
+        .profile-image img {
+            width: 100%;
+            max-width: 250px;
+            border-radius: 50%;
+            border: 5px solid var(--dark-green);
+        }
+        
+        /* Experience Section */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: var(--accent-green);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .timeline-content::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--white);
+            top: 15px;
+            transform: rotate(45deg);
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content::after {
+            right: -10px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content::after {
+            left: -10px;
+        }
+        
+        .timeline-date {
+            font-weight: 600;
+            color: var(--dark-green);
+            margin-bottom: 5px;
+        }
+        
+        .timeline-company {
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--black);
+        }
+        
+        .timeline-role {
+            font-style: italic;
+            margin-bottom: 15px;
+            color: var(--dark-green);
+        }
+        
+        .timeline-content ul {
+            padding-left: 20px;
+        }
+        
+        .timeline-content li {
+            margin-bottom: 8px;
+        }
+        
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .skill-category {
+            background-color: var(--white);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .skill-category h3 {
+            color: var(--dark-green);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-green);
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .skill-tag {
+            background-color: var(--primary-green);
+            color: var(--dark-green);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .project-image {
+            height: 200px;
+            background-color: var(--dark-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 3rem;
+        }
+        
+        .project-content {
+            padding: 20px;
+        }
+        
+        .project-content h3 {
+            color: var(--dark-green);
+            margin-bottom: 10px;
+        }
+        
+        .project-content p {
+            margin-bottom: 15px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--black);
+            color: var(--white);
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .social-links a {
+            color: var(--white);
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent-green);
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .profile-content {
+                flex-direction: column;
+            }
+            
+            .profile-image {
+                order: -1;
+            }
+            
+            .timeline::before {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content::after,
+            .timeline-item:nth-child(even) .timeline-content::after {
+                left: -10px;
+                right: auto;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .mobile-menu {
+                display: block;
+            }
+            
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>J<span>Islam</span></h1>
+                </div>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#profile">Profile</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
 
-<header class="hero">
-  <h1>Md Jahirul Islam</h1>
-  <h2>Lead Software Engineer (iOS)</h2>
-  <p>8+ years building high-performance iOS apps and leading engineering teams.</p>
-  <nav>
-    <a href="mailto:muhmd.jahir@gmail.com">Email</a>
-    <a href="https://linkedin.com/in/mohammadjahir">LinkedIn</a>
-    <a href="https://github.com/MohammadJahirul">GitHub</a>
-  </nav>
-</header>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Lead Software Engineer</h2>
+                <h1>MD JAHIRUL ISLAM</h1>
+                <p>Software Engineer Team Lead with 8 years of experience in code development and leadership.</p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>muhmd.jahir@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+8801685731988</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Dhaka, Bangladesh</span>
+                    </div>
+                </div>
+                
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn">Get In Touch</a>
+                    <a href="#projects" class="btn btn-outline">View Projects</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="about">
-  <h3>About Me</h3>
-  <p>Software Engineer Team Lead with 8 years of experience in code development and leadership.</p>
-</section>
+    <!-- Profile Section -->
+    <section id="profile" class="profile">
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Profile</h2>
+            </div>
+            <div class="profile-content">
+                <div class="profile-text">
+                    <p>Software Engineer Team Lead with 8 years of experience in code development and leadership. Proven track record of mentoring teams, driving technical excellence, and delivering high-quality mobile applications for iOS and Android platforms.</p>
+                    <p>Specialized in iOS development with expertise in Swift, UIKit, SwiftUI, and various frameworks including WebRTC, XMPP, and ARKit. Strong background in system design, performance optimization, and implementing best practices in mobile development.</p>
+                    <p>Successfully led teams at Syntax Solution Ltd, Easital Technologies, and contributed to major projects at Daraz (Alibaba Group) and other prominent companies.</p>
+                </div>
+                <div class="profile-image">
+                    <!-- Placeholder for profile image -->
+                    <div style="width: 250px; height: 250px; background-color: #ddd; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 5rem; color: #777;">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="skills">
-  <h3>Skills</h3>
-  <ul>
-    <li>Swift, SwiftUI, Combine, UIKit, MVVM</li>
-    <li>WebRTC, XMPP, CoreML, ARKit, RealityKit</li>
-    <li>Git, System Design, Leadership</li>
-  </ul>
-</section>
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Experience</h2>
+            </div>
+            <div class="timeline">
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">05/2024 - Present</div>
+                        <div class="timeline-company">Syntax Solution Ltd - Nasir Group</div>
+                        <div class="timeline-role">Lead Software Engineer</div>
+                        <ul>
+                            <li>Lead and mentor a team of mobile developers, ensuring high-quality, efficient, and timely delivery of iOS and Android applications.</li>
+                            <li>Actively contribute to iOS development by personally coding, debugging, and optimizing application features.</li>
+                            <li>Implement best practices in mobile development, including modularization, code reuse, and performance optimization.</li>
+                            <li>Drive the adoption of new technologies and development frameworks.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">05/2023 - 04/2024</div>
+                        <div class="timeline-company">Easital Technologies Ltd</div>
+                        <div class="timeline-role">Lead Engineer: iOS</div>
+                        <ul>
+                            <li>Supported the work of 8 engineers and helped them improve their programming abilities.</li>
+                            <li>Facilitated the progression of 2 team members into senior leadership roles.</li>
+                            <li>Setting technical vision and roadmap across the board on a quarterly basis.</li>
+                            <li>Managed 50+ services like Bkash, UBER, DoorDash, Daraz and others.</li>
+                            <li>Modularized the entire application to reduce development time by 80%.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">03/2022 - 04/2023</div>
+                        <div class="timeline-company">Daraz - Alibaba</div>
+                        <div class="timeline-role">Sr Software Engineer: iOS</div>
+                        <ul>
+                            <li>Spearheaded and optimized the development of features, achieving a 40% increase in productivity.</li>
+                            <li>Contributed to data-driven development, enabling accurate identification of customer needs with 90% precision.</li>
+                            <li>Proposed an innovative system design that resulted in a 50% reduction in application development costs.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">11/2019 - 02/2022</div>
+                        <div class="timeline-company">Live Technologies</div>
+                        <div class="timeline-role">Software Engineer: iOS</div>
+                        <ul>
+                            <li>Introduced a caching mechanism in the app site to deduct 30% of the API cost.</li>
+                            <li>Engineered a scalable Real-Time messaging service leveraging industry-leading technology.</li>
+                            <li>Developed custom video calling SDK using WebRTC, eliminating the need for third-party SDKs.</li>
+                            <li>Implemented an innovative indoor mapping solution utilizing real-world coordinates.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 5 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">07/2017 - 10/2019</div>
+                        <div class="timeline-company">Pechas Game Studios</div>
+                        <div class="timeline-role">Game Developer</div>
+                        <ul>
+                            <li>Expanded mobile apps and games for IOS and Android platforms.</li>
+                            <li>Built a native game engine for the lite gaming app, reducing application size by 50%.</li>
+                            <li>Proud developer of 1st 3D cricket game for Facebook Instant Game.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="experience">
-  <h3>Experience</h3>
-  <p><strong>Syntax Solution Ltd</strong> – Lead Software Engineer (May 2024 – Present)</p>
-  <ul>
-    <li>Lead and mentor a team of mobile developers, ensuring high-quality iOS/Android apps.</li>
-    <li>Drive adoption of new technologies, CI/CD and performance optimization.</li>
-  </ul>
-  <!-- Repeat for Easital, Daraz, Live Technologies, Pechas -->
-</section>
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>Skills & Expertise</h2>
+            </div>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Swift</span>
+                        <span class="skill-tag">Java</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>iOS Frameworks</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">UIKit</span>
+                        <span class="skill-tag">SwiftUI</span>
+                        <span class="skill-tag">Combine</span>
+                        <span class="skill-tag">CoreML</span>
+                        <span class="skill-tag">ARKit</span>
+                        <span class="skill-tag">RealityKit</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Technologies & Protocols</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">WebRTC</span>
+                        <span class="skill-tag">XMPP</span>
+                        <span class="skill-tag">MVVM</span>
+                        <span class="skill-tag">SPM</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Professional Skills</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Leadership</span>
+                        <span class="skill-tag">System Design</span>
+                        <span class="skill-tag">Unit Testing</span>
+                        <span class="skill-tag">Git</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="projects">
-  <h3>Projects</h3>
-  <ul>
-    <li><a href="#">Beeda Mega App</a> – Modularized 50+ services for 80% productivity gain.</li>
-    <li><a href="#">Daraz Online Shopping App</a> – 40% improvement in feature development.</li>
-    <li><a href="#">Medico Telemedicine</a> – Designed and developed full application.</li>
-    <!-- Add others -->
-  </ul>
-</section>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>Notable Projects</h2>
+            </div>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-image" style="background-color: #4caf50;">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>BEEDA - The Everything Mega App</h3>
+                        <p>A comprehensive application consisting of 50+ services. Modularized the application to enhance productivity by 80%.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-image" style="background-color: #2e7d32;">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Daraz - Online Shopping App</h3>
+                        <p>Leading online marketplace in South Asia. Enhanced feature creation allowing 40% improvement in development.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-image" style="background-color: #388e3c;">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>HungryNaki - Food Delivery</h3>
+                        <p>Bangladesh's first premium online food delivery service. Implemented new design increasing orders by 20%.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <div class="project-image" style="background-color: #1b5e20;">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Medico - Telemedicine</h3>
+                        <p>A telemedicine application connecting patients with healthcare providers. Designed and developed the entire application.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="project-card">
+                    <div class="project-image" style="background-color: #4caf50;">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Iqra - Edu-tech</h3>
+                        <p>Digital Edu-Tech platform for Quran Learning. Designed, steered, and finalized feature developments.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="project-card">
+                    <div class="project-image" style="background-color: #2e7d32;">
+                        <i class="fas fa-baseball-ball"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>MySports</h3>
+                        <p>Sports app for Cricket, Football, Tennis, and other sports entertainment. Crafted and led feature advancements.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<footer>
-  <p>© 2025 Md Jahirul Islam</p>
-</footer>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+            </div>
+            <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+                <p>I'm always open to discussing new opportunities and interesting projects. Feel free to reach out if you'd like to connect!</p>
+                
+                <div class="contact-info" style="margin: 30px 0;">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>muhmd.jahir@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+8801685731988</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Dhaka, Bangladesh</span>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/mohammadjahir" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/MohammadJahirul" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+                
+                <a href="mailto:muhmd.jahir@gmail.com" class="btn">Send Email</a>
+            </div>
+        </div>
+    </section>
 
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://linkedin.com/in/mohammadjahir" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/MohammadJahirul" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+            <p class="copyright">© 2023 MD Jahirul Islam. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu after clicking a link
+                if (window.innerWidth <= 480) {
+                    document.querySelector('nav ul').classList.remove('show');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
