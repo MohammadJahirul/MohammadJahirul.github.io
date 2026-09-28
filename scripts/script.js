@@ -8,9 +8,6 @@ navigation.querySelectorAll('a').forEach(link => link.addEventListener('click', 
 document.addEventListener('keydown', event => { if (event.key === 'Escape' && navigation.classList.contains('is-open')) { closeMenu(); menuButton.focus(); } });
 const desktop = window.matchMedia('(min-width: 651px)');
 desktop.addEventListener('change', event => { if (event.matches) closeMenu(); });
-const clock = document.querySelector('#dhaka-time');
-function updateTime() { clock.textContent = new Intl.DateTimeFormat('en-GB', {timeZone:'Asia/Dhaka', hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date()) + ' LOCAL'; }
-updateTime(); setInterval(updateTime, 60000);
 document.querySelector('#year').textContent = new Date().getFullYear();
 let returnFocus;
 document.querySelectorAll('[data-dialog]').forEach(button => button.addEventListener('click', () => {

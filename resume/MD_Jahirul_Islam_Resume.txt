@@ -76,6 +76,10 @@ Built a native game engine for a lightweight gaming application, reducing applic
 
 SELECTED PROJECTS
 
+Daraz | Alibaba Group | E-commerce
+
+Contributed to the Daraz iOS shopping app as a Senior Software Engineer. Developed and optimized shopping features, supported data-informed product decisions, and proposed system design improvements to simplify delivery.
+
 Expense Packet | Independent iOS Product
 
 Built and published a SwiftUI app with SwiftData persistence, Vision OCR, PDFKit, and StoreKit 2. Converts receipts into numbered PDF reimbursement packets and matching CSV exports, with multi-currency handling and confidence-based review. Isolated extraction, reporting, backup, and purchasing in a Swift 6 package with Swift Testing coverage.
@@ -91,10 +95,6 @@ Contributed to a multi-service mobile platform and its merchant companion. Worke
 HungryNaki | Food Delivery
 
 Redesigned the application interface and user experience for a food delivery product, contributing to a 20% increase in orders.
-
-Medico | Telemedicine
-
-Designed and developed a telemedicine application, drawing on real-time messaging and video communication experience.
 
 EDUCATION
 
