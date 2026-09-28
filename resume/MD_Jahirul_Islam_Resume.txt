@@ -1,0 +1,103 @@
+MD JAHIRUL ISLAM
+
+Lead Software Engineer | iOS Engineering & Mobile Architecture
+
+Dhaka, Bangladesh | +880 1685 731988 | muhmd.jahir@gmail.com
+
+mohammadjahirul.github.io | linkedin.com/in/mohammadjahir
+
+github.com/MohammadJahirul
+
+PROFESSIONAL SUMMARY
+
+Hands-on iOS engineering lead with 9+ years of software development experience across e-commerce, ride-sharing, real-time communication, and mobile games. Builds native applications with Swift, SwiftUI, and UIKit; designs modular architectures; and mentors mobile engineers. Experience includes Daraz (Alibaba Group), leadership of an 8-engineer team, and independently developed App Store products Expense Packet and Talk Trial.
+
+TECHNICAL SKILLS
+
+iOS development: Swift, SwiftUI, UIKit, Combine, SwiftData, Swift Package Manager (SPM)
+
+Architecture and delivery: MVVM, modular architecture, system design, unit testing, Git, CI/CD
+
+Specialist technologies: Vision OCR, AVFoundation, Speech, StoreKit 2, Foundation Models, WebRTC, XMPP
+
+Leadership: Technical roadmaps, mentoring, code reviews, cross-platform team coordination
+
+PROFESSIONAL EXPERIENCE
+
+Lead Software Engineer | Nasir Syntax Solution Ltd.
+
+May 2024 - Present | Dhaka, Bangladesh
+
+Lead iOS and Android engineers delivering ride-sharing and e-commerce applications, combining hands-on iOS development with architecture and delivery oversight.
+
+Design modular mobile solutions and real-time ride-sharing flows spanning parcel delivery, messaging, and bidding-based fare negotiation.
+
+Develop e-commerce capabilities including product catalogs, checkout, payment integrations, and augmented reality experiences.
+
+Establish CI/CD pipelines and support engineering growth through mentoring, one-to-one meetings, and performance reviews.
+
+Lead Engineer, iOS | Easital Technologies Ltd.
+
+May 2023 - Apr 2024 | Dhaka, Bangladesh
+
+Supported 8 engineers through technical guidance and internal assessments; helped 2 team members progress into senior leadership roles.
+
+Set quarterly technical roadmaps and guided modularization of a multi-service application spanning payments, ride-sharing, food delivery, and commerce.
+
+Collaborated with backend engineers to design an XMPP messaging system and align mobile and backend architecture.
+
+Senior Software Engineer, iOS | Daraz - Alibaba Group
+
+Mar 2022 - Apr 2023 | Dhaka, Bangladesh
+
+Developed and optimized features for the Daraz shopping application, collaborating on data-informed improvements to the customer experience.
+
+Proposed system design improvements to simplify feature delivery and reduce application development costs.
+
+PROFESSIONAL EXPERIENCE CONTINUED
+
+Software Engineer, iOS | Live Technologies
+
+Nov 2019 - Feb 2022 | Dhaka, Bangladesh
+
+Introduced application caching that reduced API costs by 30%.
+
+Built real-time messaging capabilities and a custom WebRTC video-calling SDK to reduce reliance on third-party services.
+
+Implemented indoor navigation using real-world coordinates and contributed to mobile products in telemedicine, education, sports, and food delivery.
+
+Game Developer | Pechas Game Studios
+
+Jul 2017 - Oct 2019 | Dhaka, Bangladesh
+
+Developed mobile applications and games for iOS and Android, including the Goli Cricket 3D multiplayer game for Facebook Instant Games.
+
+Built a native game engine for a lightweight gaming application, reducing application size by 50% against the Unity-based implementation.
+
+SELECTED PROJECTS
+
+Expense Packet | Independent iOS Product
+
+Built and published a SwiftUI app with SwiftData persistence, Vision OCR, PDFKit, and StoreKit 2. Converts receipts into numbered PDF reimbursement packets and matching CSV exports, with multi-currency handling and confidence-based review. Isolated extraction, reporting, backup, and purchasing in a Swift 6 package with Swift Testing coverage.
+
+Talk Trial | Independent iOS Product
+
+Built and published a SwiftUI speaking-practice app using AVFoundation, Speech, Combine, Swift Charts, and StoreKit 2. Implemented word-synced playback, filler-word detection, live haptic coaching, and subscription entitlements. Integrated on-device Foundation Models for follow-up questions on supported devices, with a rule-based fallback.
+
+Beeda and Beeda Merchant | Multi-service Commerce
+
+Contributed to a multi-service mobile platform and its merchant companion. Worked on application modularization and features for commerce, orders, and business operations.
+
+HungryNaki | Food Delivery
+
+Redesigned the application interface and user experience for a food delivery product, contributing to a 20% increase in orders.
+
+Medico | Telemedicine
+
+Designed and developed a telemedicine application, drawing on real-time messaging and video communication experience.
+
+EDUCATION
+
+Bachelor of Science in Software Engineering
+
+Daffodil International University | 2017
