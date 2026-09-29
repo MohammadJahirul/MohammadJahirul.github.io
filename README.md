@@ -1,6 +1,6 @@
 # Md Jahirul Islam — iOS Engineering Portfolio
 
-A responsive, dependency-free portfolio for Senior and Lead iOS opportunities. Includes Expense Packet and Talk Trial product showcases, engineering case studies, career history, and downloadable two-page resumes.
+A responsive, dependency-free portfolio for Senior and Lead iOS opportunities. The opening screen identifies Jahirul as an iOS engineer and shows a published iPhone app; Daraz and Beeda have featured sections, followed by Expense Packet and Talk Trial case studies, career history, and downloadable two-page resumes.
 
 ## Preview
 
@@ -10,7 +10,7 @@ Run `python3 -m http.server 8765 --bind 127.0.0.1` from this directory, then ope
 
 - `index.html`: accessible, semantic content and native case-study dialogs.
 - `styles/style.css`: responsive editorial layout, reduced-motion support, and print styles.
-- `scripts/script.js`: mobile navigation, dialogs, local clock, and email copying.
+- `scripts/script.js`: mobile navigation, dialogs, and email copying.
 - `assets/`: locally hosted App Store artwork, favicon, and social preview.
 - `resume/`: PDF, editable DOCX, and plain text versions of the resume.
 - `robots.txt` and `sitemap.xml`: search discovery.
