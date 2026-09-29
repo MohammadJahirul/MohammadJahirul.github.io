@@ -1,6 +1,6 @@
 # Md Jahirul Islam — iOS Engineering Portfolio
 
-A responsive, dependency-free portfolio for Senior and Lead iOS opportunities. The opening screen identifies Jahirul as an iOS engineer and shows a published iPhone app; Daraz and Beeda have featured sections, followed by Expense Packet and Talk Trial case studies, career history, and downloadable two-page resumes.
+A responsive, dependency-free portfolio for Senior and Lead iOS opportunities. The opening screen identifies Jahirul as an iOS engineer and shows a published iPhone app. Daraz and Beeda have featured sections, followed by Expense Packet, Talk Trial, Robi MySports, and IQRA showcases. Medico and HungryNaki appear as concise text projects, followed by career history and downloadable two-page resumes.
 
 ## Preview
 
@@ -21,7 +21,7 @@ No build tool, npm install, external font, analytics, or form backend is require
 
 Update experience and project copy in `index.html`. Replace the corresponding files in `resume/` when editing the resume. The contact email is also referenced in `scripts/script.js`. Update the stylesheet and script query version in `index.html` when their contents change.
 
-The App Store screenshots and icons belong to the portfolio owner's apps and were sourced from their public listings. Technical case-study content was checked against the local project source. Professional history and earlier impact figures come from the owner's supplied resume; education was supplied by the owner. No download counts, ratings, or unverified concurrency claims are added.
+The App Store screenshots and icons were sourced from the apps' public listings. Expense Packet and Talk Trial technical case-study content was checked against their local project source. Robi MySports and IQRA copy describes their public listings and states only that Jahirul worked on their iOS apps; it does not claim ownership of specific features. Professional history and earlier impact figures come from the owner's supplied resume and direct corrections; education was supplied by the owner. No download counts, ratings, or unverified concurrency claims are added.
 
 ## Validation
 
