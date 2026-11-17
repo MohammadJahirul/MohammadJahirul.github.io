@@ -10,7 +10,7 @@ github.com/MohammadJahirul
 
 PROFESSIONAL SUMMARY
 
-Hands-on iOS engineering lead with 9+ years of software development experience across e-commerce, ride-sharing, real-time communication, and mobile games. Builds native applications with Swift, SwiftUI, and UIKit; designs modular architectures; and mentors mobile engineers. Experience includes Daraz (Alibaba Group), leadership of an 8-engineer team, and independently developed App Store products Expense Packet and Talk Trial.
+Hands-on iOS engineering lead with 9+ years of software development experience across e-commerce, ride-sharing, real-time communication, and mobile games. Builds native applications with Swift, SwiftUI, and UIKit; designs modular architectures; and mentors mobile engineers. Experience includes Daraz (Alibaba Group), leadership of an 8-engineer team, and independently developed App Store products PDF Boss, Expense Packet, and Talk Trial.
 
 TECHNICAL SKILLS
 
@@ -18,7 +18,7 @@ iOS development: Swift, SwiftUI, UIKit, Combine, SwiftData, Swift Package Manage
 
 Architecture and delivery: MVVM, modular architecture, system design, unit testing, Git, CI/CD
 
-Specialist technologies: Vision OCR, AVFoundation, Speech, StoreKit 2, Foundation Models, WebRTC, XMPP
+Specialist technologies: PDFKit, Vision and VisionKit OCR, AVFoundation, Speech, StoreKit 2, App Intents, Foundation Models, WebRTC, XMPP
 
 Leadership: Technical roadmaps, mentoring, code reviews, cross-platform team coordination
 
@@ -76,9 +76,9 @@ Built a native game engine for a lightweight gaming application, reducing applic
 
 SELECTED PROJECTS
 
-Daraz | Alibaba Group | E-commerce
+PDF Boss | Independent iOS Product
 
-Contributed to the Daraz iOS shopping app as a Senior Software Engineer. Developed and optimized shopping features, supported data-informed product decisions, and proposed system design improvements to simplify delivery.
+Built and published a SwiftUI PDF and Word workspace for iPhone and iPad using PDFKit, Vision and VisionKit OCR, StoreKit 2, and App Intents. Supports scanning, signing, annotation, page management, searchable OCR layers, redacted copies, and on-device PDF-to-Word conversion. Added Siri and Spotlight App Shortcuts, recovery drafts, and an optional on-device Foundation Models page assistant, with no account or backend.
 
 Expense Packet | Independent iOS Product
 
@@ -95,6 +95,10 @@ Contributed to a multi-service mobile platform and its merchant companion. Worke
 HungryNaki | Food Delivery
 
 Redesigned the application interface and user experience for a food delivery product, contributing to a 20% increase in orders.
+
+Medico | Telemedicine
+
+Designed and developed a telemedicine application, drawing on real-time messaging and video communication experience.
 
 EDUCATION
 

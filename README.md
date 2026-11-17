@@ -1,6 +1,20 @@
-# Md Jahirul Islam — iOS Engineering Portfolio
+# Md Jahirul Islam — iOS Engineering Portfolio (v2)
 
-A responsive, dependency-free portfolio for Senior and Lead iOS opportunities. The opening screen identifies Jahirul as an iOS engineer and shows a published iPhone app. Daraz and Beeda have featured sections, followed by Expense Packet, Talk Trial, Robi MySports, and IQRA showcases. Medico and HungryNaki appear as concise text projects, followed by career history and downloadable two-page resumes.
+A dependency-free, single-page portfolio for senior and lead iOS roles. Live at https://mohammadjahirul.github.io/.
+
+## Design
+
+- **Direction:** a dark stage lit by one beam of light that falls on three real iPhone apps. The accent is Swift orange (`#F05138`), the colour of the language the work is written in.
+- **Signature:** each independent app runs a small coded demo of its real core idea, built with CSS animation:
+  - PDF Boss: scan → OCR text layer → redact a copy
+  - Talk Trial: word-synced transcript that flags filler words
+  - Expense Packet: receipts settle into per-currency totals
+- **Type:** Familjen Grotesk (display), Geist (text), Geist Mono (code and labels), loaded from Google Fonts.
+- **Motion:** the hero phones rise into the light once on load, and each demo plays once when scrolled into view. With reduced motion, or without JavaScript, every demo shows its finished state.
+
+## Previous design
+
+The earlier editorial design is kept in git as the `classic-design-v1` tag (and the `add-pdf-boss` branch). To see it locally: `git checkout classic-design-v1`.
 
 ## Preview
 
@@ -8,23 +22,15 @@ Run `python3 -m http.server 8765 --bind 127.0.0.1` from this directory, then ope
 
 ## Contents
 
-- `index.html`: accessible, semantic content and native case-study dialogs.
-- `styles/style.css`: responsive editorial layout, reduced-motion support, and print styles.
-- `scripts/script.js`: mobile navigation, dialogs, and email copying.
-- `assets/`: locally hosted App Store artwork, favicon, and social preview.
-- `resume/`: PDF, editable DOCX, and plain text versions of the resume.
+- `index.html`: all page content and semantic structure.
+- `styles/style.css`: design tokens, layout, demos and responsive rules.
+- `scripts/script.js`: demo triggers (IntersectionObserver plus a scroll fallback) and email copying.
+- `assets/`: App Store artwork (Daraz, Beeda, Beeda Merchant, Robi MySports and IQRA images come from their public App Store listings), raw app screenshots (`screen-*.jpg`), icons, favicon and the social preview.
+- `resume/`: PDF, editable DOCX and plain-text résumé.
 - `robots.txt` and `sitemap.xml`: search discovery.
 
-No build tool, npm install, external font, analytics, or form backend is required. Contact links open the visitor's mail client. GitHub Pages can serve this repository directly from its root.
+## Content rules
 
-## Content maintenance
+Every claim comes from the owner's résumé, the public App Store listings, or the apps' own source. The code sample is taken from `pdfboss/Services/AppShortcuts.swift`. Demo data (receipts, transcript) is illustrative and mirrors the apps' own sample content. No download counts, ratings or unverified figures are shown. Robi MySports and IQRA are described only as apps Jahirul worked on as part of their iOS teams.
 
-Update experience and project copy in `index.html`. Replace the corresponding files in `resume/` when editing the resume. The contact email is also referenced in `scripts/script.js`. Update the stylesheet and script query version in `index.html` when their contents change.
-
-The App Store screenshots and icons were sourced from the apps' public listings. Expense Packet and Talk Trial technical case-study content was checked against their local project source. Robi MySports and IQRA copy describes their public listings and states only that Jahirul worked on their iOS apps; it does not claim ownership of specific features. Professional history and earlier impact figures come from the owner's supplied resume and direct corrections; education was supplied by the owner. No download counts, ratings, or unverified concurrency claims are added.
-
-## Validation
-
-The resume is single-column with selectable text, standard section headings, and body-level contact details. It has no photos, skill-rating graphics, tables, or text boxes. PDF text extraction and two-page layout were checked; this does not imply certification by any particular ATS vendor.
-
-The site was checked in desktop and mobile browser layouts, including internal links, local assets, mobile menu, case-study dialogs, Escape dismissal, focus return, and document downloads. Motion respects `prefers-reduced-motion`.
+When content changes, update the stylesheet and script query version in `index.html`.
