@@ -1,28 +1,53 @@
 'use strict';
-document.documentElement.classList.add('js-ready');
-const menuButton = document.querySelector('.menu-toggle');
-const navigation = document.querySelector('#navigation');
-const closeMenu = () => { navigation.classList.remove('is-open'); menuButton.setAttribute('aria-expanded', 'false'); };
-menuButton.addEventListener('click', () => { const open = menuButton.getAttribute('aria-expanded') !== 'true'; menuButton.setAttribute('aria-expanded', String(open)); navigation.classList.toggle('is-open', open); });
-navigation.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
-document.addEventListener('keydown', event => { if (event.key === 'Escape' && navigation.classList.contains('is-open')) { closeMenu(); menuButton.focus(); } });
-const desktop = window.matchMedia('(min-width: 651px)');
-desktop.addEventListener('change', event => { if (event.matches) closeMenu(); });
-document.querySelector('#year').textContent = new Date().getFullYear();
-let returnFocus;
-document.querySelectorAll('[data-dialog]').forEach(button => button.addEventListener('click', () => {
- const dialog = document.getElementById(button.dataset.dialog);
- returnFocus = button; dialog.showModal(); dialog.scrollTop = 0; document.body.classList.add('modal-open');
- dialog.querySelector('.dialog-close').focus();
-}));
-document.querySelectorAll('dialog').forEach(dialog => {
- dialog.querySelector('.dialog-close').addEventListener('click', () => dialog.close());
- dialog.addEventListener('click', event => { const r = dialog.getBoundingClientRect(); if (event.target === dialog && (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom)) dialog.close(); });
- dialog.addEventListener('close', () => { document.body.classList.remove('modal-open'); returnFocus?.focus(); });
-});
+
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// Index the animated pieces so CSS can stagger them.
+document.querySelectorAll('.demo-talk .w').forEach((word, i) => word.style.setProperty('--i', i));
+document.querySelectorAll('.demo-expense .r').forEach((row, i) => row.style.setProperty('--i', i));
+const talk = document.querySelector('.demo-talk');
+const firstFiller = talk?.querySelector('.w.filler');
+if (talk && firstFiller) talk.style.setProperty('--nudge-at', `${Number(firstFiller.style.getPropertyValue('--i')) * 95 + 120}ms`);
+
+// Without motion (or without IntersectionObserver) every demo simply shows its finished state.
+if (!reduceMotion && 'IntersectionObserver' in window) {
+  document.documentElement.classList.add('motion');
+  const demos = [...document.querySelectorAll('.demo')];
+  const play = demo => demo.classList.add('play');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      play(entry.target);
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.35 });
+  demos.forEach(demo => observer.observe(demo));
+  // Fallback: also check positions on scroll, so a demo can never stay in its hidden "before" state.
+  let ticking = false;
+  const check = () => {
+    ticking = false;
+    demos.forEach(demo => {
+      const r = demo.getBoundingClientRect();
+      if (r.top < innerHeight * 0.75 && r.bottom > 0) play(demo);
+    });
+  };
+  addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(check); } }, { passive: true });
+  addEventListener('load', check);
+}
+
+const year = document.querySelector('#year');
+if (year) year.textContent = new Date().getFullYear();
+
 const copyButton = document.querySelector('#copy-email');
 const copyStatus = document.querySelector('#copy-status');
-copyButton.addEventListener('click', async () => {
- try { await navigator.clipboard.writeText('muhmd.jahir@gmail.com'); copyButton.textContent='Email copied ✓'; copyStatus.textContent='Email address copied to clipboard.'; }
- catch { copyButton.textContent='Select email above to copy'; copyStatus.textContent='Clipboard unavailable. Select and copy the email address shown above.'; }
+copyButton?.addEventListener('click', async () => {
+  try {
+    await navigator.clipboard.writeText('muhmd.jahir@gmail.com');
+    copyButton.textContent = 'Copied';
+    copyStatus.textContent = 'Email address copied to clipboard.';
+    setTimeout(() => { copyButton.textContent = 'Copy email'; }, 2400);
+  } catch {
+    copyButton.textContent = 'Select the email to copy';
+    copyStatus.textContent = 'Clipboard unavailable. Select and copy the email address shown.';
+  }
 });
